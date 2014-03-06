@@ -1,17 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mvchib</groupId>
-	<artifactId>spring</artifactId>
+	<groupId>com.demo</groupId>
+	<artifactId>spring-mvn-hib</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<properties>
 		<hibernate.version>4.2.0.Final</hibernate.version>
 		<mysql.connector.version>5.1.21</mysql.connector.version>
 		<spring.version>3.2.2.RELEASE</spring.version>
 	</properties>
-
+	<name>spring-mvn-hib Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
 		<!-- DB related dependencies -->
 		<dependency>
@@ -68,6 +68,12 @@
 		</dependency>
 		<!-- Servlet API and JSTL -->
 		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
@@ -92,26 +98,7 @@
 			<version>1.0.0.M1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.0</version>
-		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>spring-maven-milestone</id>
-			<name>Spring Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
-		</repository>
-	</repositories>
-
 	<build>
 		<finalName>spr-mvc-hib</finalName>
 		<plugins>
@@ -125,5 +112,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
