@@ -1,26 +1,51 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
+ 
+    <!-- Basic Properties -->
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.developerscrappad</groupId>
-    <artifactId>project</artifactId>
+    <artifactId>DummyDemo-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
-  <groupId>com.developerscrappad</groupId>
-  <artifactId>DummyDemo-api</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>DummyDemo-api</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <name>DummyDemo-api</name>
+ 
+    <!-- Reference the parent -->
+    <parent>
+        <groupId>com.developerscrappad</groupId>
+        <artifactId>project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+ 
+    <!-- The packaging value of commonly used libraries should be "jar" -->
+    <packaging>jar</packaging>
+ 
+    <build>
+        <plugins>
+            <!--
+                The surefire plugin is for unit testing purposes.
+                For unit test, it will only pickup files within the **/utest/ directory.
+                So, make sure you know where to place your unit test java files.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <executions>
+                    <execution>
+                        <id>sf1</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/utest/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
