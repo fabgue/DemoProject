@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="com.au.springjtableintegration.business.model.Expense" />
+		<mapping
+			class="com.au.springjtableintegration.business.model.ExpenseCategory" />
+		<mapping
+			class="com.au.springjtableintegration.business.model.ExpenseSubCategory" />
+	</session-factory>
+</hibernate-configuration>
